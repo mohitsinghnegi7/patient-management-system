@@ -1,4 +1,4 @@
-package com.patientManagementSystem.patient_service.model;
+package com.patientManagementSystem.patientService.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
