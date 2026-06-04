@@ -13,6 +13,12 @@ target/
 .springBeans
 .sts4-cache
 
+# Compiled class files
+*.class
+
+# Log files
+*.log
+
 ### IntelliJ IDEA ###
 .idea
 *.iws
@@ -31,3 +37,28 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Application properties containing secrets
+application-local.properties
+application-dev.properties
+application-prod.properties
+application.properties
+application.yml
+
+# Environment variables
+.env
+
+# Generated files
+out/
+
+# Temporary files
+*.tmp
+*.swp
+
+# Java crash logs
+hs_err_pid*
+replay_pid*
+
+# Spring Boot generated logs
+logs/
+*.gz

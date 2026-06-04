@@ -2,6 +2,7 @@ package com.patientManagementSystem.patientService.controller;
 
 import com.patientManagementSystem.patientService.dto.PatientRequestDTO;
 import com.patientManagementSystem.patientService.dto.PatientResponseDTO;
+import com.patientManagementSystem.patientService.grpc.BillingServiceGrpcClient;
 import com.patientManagementSystem.patientService.service.PatientService;
 import com.patientManagementSystem.patientService.validators.CreatePatientValidationGroup;
 import io.swagger.v3.oas.annotations.Operation;
