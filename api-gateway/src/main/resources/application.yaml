@@ -12,6 +12,13 @@ spring:
               predicates:
                 - Path=/api/auth/**
 
+            - id: api-docs-auth-route
+              uri: http://auth-service:8084
+              predicates:
+                - Path=/api-docs/auth
+              filters:
+                - RewritePath=/api-docs/auth,/v3/api-docs
+
 
 
             - id: patient-service
