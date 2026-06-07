@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: api-gateway
+
+  cloud:
+    gateway:
+      server:
+        webflux:
+          routes:
+            - id: auth-service
+              uri: http://auth-service:8084
+              predicates:
+                - Path=/api/auth/**
+
+
+
+            - id: patient-service
+              uri: http://patient-service:8080
+              predicates:
+                - Path=/api/patients/**
+              filters:
+                - JwtValidation
+
+
+            - id: api-docs-patient-route
+              uri: http://patient-service:8080
+              predicates:
+                - Path=/api-docs/patients
+              filters:
+                - RewritePath=/api-docs/patients,/v3/api-docs
+server:
+  port: 7000

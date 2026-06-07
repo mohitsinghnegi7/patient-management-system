@@ -6,6 +6,12 @@ option java_package = "billing";
 service BillingService{
   rpc CreateBillingAccount(BillingRequest) returns (BillingResponse);
 
+  rpc GetBillingAccount(GetBillingRequest) returns (BillingResponse);
+
+  rpc AddCharge(AddChargeRequest) returns (BillingResponse);
+
+  rpc UpdateBillingStatus(UpdateStatusRequest) returns (BillingResponse);
+
 }
 
 message BillingRequest{
@@ -16,5 +22,22 @@ message BillingRequest{
 
 message BillingResponse{
   string accountId = 1;
+  string patientId = 2;
+  string status = 3;
+  double totalAmount = 4;
+}
+
+message GetBillingRequest{
+  string patientId = 1;
+}
+
+message AddChargeRequest{
+  string patientId = 1;
+  double ammount = 2;
+  string description = 3;
+}
+
+message UpdateStatusRequest{
+  string patientId = 1;
   string status = 2;
 }
